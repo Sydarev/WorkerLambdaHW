@@ -9,7 +9,10 @@ public class Worker {
 
     public void start() {
         for (int i = 0; i < 100; i++) {
-            if (i == 33) errorCallback.onError("Task " + i + " was failed");
+            if (i == 33) {
+                errorCallback.onError("Task " + i + " was failed");
+                continue;
+            }
             callback.onDone("Task " + i + " is done");
         }
     }
